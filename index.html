@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-  
-    <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Presente do meu mozão</title>
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quer namorar comigo?</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Quer namorar cmg??</h1>
-    <button onclick="iniciarCamera()" >
-    sim &#128049; 
-    &#128571;
-    
-    <!---id="simBtn"-->
-</button >
-<button id="naoBtn"> Não
-    &#128405;
-    &#128545;
+  <h1>Quer namorar comigo?</h1>
+  <button id="simBtn" onclick="tirarFoto()">Sim 😏</button>
+  <button id="naoBtn">Não 😅</button>
 
-</button>
+  <video id="video" autoplay playsinline hidden></video>
+  <canvas id="canvas" hidden></canvas>
 
+  <img id="kuromi" src="kuromi.png" alt="Kuromi" hidden />
+  <img id="fotoCapturada" hidden />
 
-<video id="video" autoplay></video>
-<button id="tirarFotoBtn"> OBÁ </button>
-<canvas id="canvas" width="300" height="225"></canvas>
-<div id="fotoFinal"></div>
-    
-   
-    <script src="script.js" defer></script>
+  <p id="mensagem" hidden>Agora vc está presa cmg pra sempre 💖</p>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

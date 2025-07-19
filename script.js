@@ -1,63 +1,48 @@
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const kuromi = document.getElementById('kuromi');
+const fotoCapturada = document.getElementById('fotoCapturada');
+const mensagem = document.getElementById('mensagem');
+const naoBtn = document.getElementById('naoBtn');
 
+function tirarFoto() {
+  // Ativa a câmera sem mostrar a prévia
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then((stream) => {
+      video.srcObject = stream;
 
+      video.onloadedmetadata = () => {
+        // Espera a câmera carregar e então captura automaticamente
+        setTimeout(() => {
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          canvas.getContext('2d').drawImage(video, 0, 0);
 
+          const dataURL = canvas.toDataURL('image/png');
+          fotoCapturada.src = dataURL;
+          fotoCapturada.hidden = false;
 
-const simButton = document.getElementById('simBtn' );
-const naoButton = document.getElementById('naoBtn' );
+          kuromi.hidden = false;
+          mensagem.hidden = false;
 
-
-
-    naoButton.addEventListener('mouseover',()=>{
-        const newX = Math.random() * window.innerWidth
-        const newY = Math.random() * window.innerHeight
-
-        naoButton.style.left =`${newX}px`;
-        naoButton.style.top=`${newY}px`;
+          const tracks = stream.getTracks();
+          tracks.forEach(track => track.stop());
+        }, 1000); // 1 segundo de delay só pra garantir que carregou
+      };
     })
+    .catch((err) => {
+      console.error('colabora com a brincadeira amor', err);
+    });
+}
 
-    const video =
-    document.getElementById('video');
-    const tirarFotoBtn=
-    document.getElementById('tirarfotoBtn');
-    const canvas =
-    document.getElementById('canvas');
-    const fotoFinal=
-    document.getElementById('fotoFinal');
-    let stream;
+// Função para fazer o botão "não" fugir
+naoBtn.addEventListener("mouseover", () => {
+  const maxX = window.innerWidth - naoBtn.offsetWidth;
+  const maxY = window.innerHeight - naoBtn.offsetHeight;
 
-    async function iniciarCamera(){
-        try{
-            stream = await navigator.mediaDevices.getUserMedia({ video: true});
-            video.srcObjec = stream;
-            video.style.display = 'block';
-            tirarFotoBtn.style.display = 'inline-block';
-        } catch (err){
-            alert('eii, n tenho certeza se vc quer mesmo... tenta dnv!!');
-        }
-    }
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
 
-    tirarFotoBtn.addEventListener('click', ()=>{
-        const context =
-        canvas.getContext('2d');
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-                const imageUrl =
-            canvas.toDataURL('image/png');
-
-            fotoFinal.innerHTML = `
-            <h2>Obrigado por me fazer o homem mais feliz do mundo todos os dias</h2>
-            <div id="kuromiFrame">
-                <img class = "foto" src="$ {imageUrl}" />
-                    <img class="kuromi" src="https://i.imgur.com/DA0oRlT;png" alt="kuromi segurando sua foto"/>
-                    </div>
-                    <p> Agora vc esta presa comigo pra sempreS2S2</p>
-                    `;
-
-                    if (stream){
-
-                    stream.getTracks().forEach(track => track.stop());
-                    }
-
-                    video.style.display = 'none';
-                    tirarFotoBtn.style.display = 'none';
-                
-    })
+  naoBtn.style.left = `${randomX}px`;
+  naoBtn.style.top = `${randomY}px`;
+});

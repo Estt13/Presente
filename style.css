@@ -6,60 +6,55 @@ body{
     width: 412px;
     height: 914px;
 
-}
-h1 {
-    color: #d13f9f;
-    font-size: clamp(24px, 6vw, 36px);
-}
-button:hover{
-    background-color: #ffa6c1;
-}
-
-#simBtn{
-    background-color: purple;
-}
-
-  #naoBtn{
-    background-color: red;
-      position: absolute;
-            top:50px;
-            left: 50px;
-            transition: all 0.2s ease-in-out;
-        }
-video, canvas {
-    width: 90vw;
-    max-width: 300px;
-    height: auto;
-    margin-top: 20px;
-    display: none;
-    border-radius: 10px;
-}
-#tirarFotoBtn{
-    display: none;
-
-}
-#fotoFinal{
-    margin-top: 30px;
     text-align: center;
-}
-
-#kuromiFrame{
-    width: 90vw;
-    max-width: 320px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: hotpink;
+    color: white;
+    cursor: pointer;
     position: relative;
-    margin: 0 auto;
-}
-#kuromiFrame img.Foto{
-    width: 55%;
-    position: absolute;
-    left: 22.5%;
-    top: 18%;
-    border-radius: 10px;
-    z-index: 1;
-}
-
-#kuromiFrame img.kuromi {
-    width: 100%;
     z-index: 2;
+  }
+  
+  #naoBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  video, canvas, #fotoCapturada {
+    top: 578px;
+    right: 100px;
+    width: 34%;
     position: relative;
-}
+    transform: rotate(-7deg);
+    aspect-ratio: 1 / 1;
+  }
+  
+  #kuromi {
+    position: absolute;
+    top: 430px;
+    right: 70px;
+    width: 400px;
+    z-index: 1;
+  }
+  
+  #mensagem {
+    font-size: 18px;
+    color: #d81b60;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
