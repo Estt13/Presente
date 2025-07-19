@@ -1,0 +1,61 @@
+body{
+    background-image:url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 412px;
+    height: 914px;
+
+}
+#simBtn{
+    background-color: purple;
+}
+
+  #naoBtn{
+    background-color: red;
+      position: absolute;
+            top:50px;
+            left: 50px;
+            transition: all 0.2s ease-in-out;
+        }
+video, canvas {
+    display: none;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#fotoFinal{
+    margin-top: 20px;
+}
+
+#kuromiFrame{
+    width: 90vw;
+    max-width: 320px;
+    position: relative;
+    margin: 0 auto;
+}
+#kuromiFrame img.Foto{
+    width: 55%;
+    position: absolute;
+    left: 22.5%;
+    top: 18%;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+#kuromiFrame img.kuromi {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+video, canvas {
+    width: 90v;
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: none;
+}
+#fotoFinal{
+    margin-top: 30px;
+    text-align: center;
+}
