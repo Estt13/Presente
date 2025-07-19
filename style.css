@@ -7,6 +7,14 @@ body{
     height: 914px;
 
 }
+h1 {
+    color: #d13f9f;
+    font-size: clamp(24px, 6vw, 36px);
+}
+button:hover{
+    background-color: #ffa6c1;
+}
+
 #simBtn{
     background-color: purple;
 }
@@ -19,12 +27,20 @@ body{
             transition: all 0.2s ease-in-out;
         }
 video, canvas {
-    display: none;
+    width: 90vw;
+    max-width: 300px;
+    height: auto;
     margin-top: 20px;
+    display: none;
     border-radius: 10px;
 }
+#tirarFotoBtn{
+    display: none;
+
+}
 #fotoFinal{
-    margin-top: 20px;
+    margin-top: 30px;
+    text-align: center;
 }
 
 #kuromiFrame{
@@ -46,16 +62,4 @@ video, canvas {
     width: 100%;
     z-index: 2;
     position: relative;
-}
-video, canvas {
-    width: 90v;
-    max-width: 300px;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    display: none;
-}
-#fotoFinal{
-    margin-top: 30px;
-    text-align: center;
 }

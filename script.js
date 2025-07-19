@@ -18,7 +18,7 @@ const naoButton = document.getElementById('naoBtn' );
     const video =
     document.getElementById('video');
     const tirarFotoBtn=
-    document.getElementById('tirando fotoBtn');
+    document.getElementById('tirarfotoBtn');
     const canvas =
     document.getElementById('canvas');
     const fotoFinal=
@@ -49,7 +49,7 @@ const naoButton = document.getElementById('naoBtn' );
                 <img class = "foto" src="$ {imageUrl}" />
                     <img class="kuromi" src="https://i.imgur.com/DA0oRlT;png" alt="kuromi segurando sua foto"/>
                     </div>
-                    <p> Agora vc esta presa cimigo pra sempreS2S2</p>
+                    <p> Agora vc esta presa comigo pra sempreS2S2</p>
                     `;
 
                     if (stream){
